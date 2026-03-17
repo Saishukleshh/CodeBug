@@ -1,0 +1,308 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Arial', 'Helvetica', sans-serif;
+  --color-gov-blue: #1244A2;
+  --color-gov-blue-dark: #0d3680;
+  --color-gov-blue-light: #1a5bc4;
+  --color-sarathi-cyan: #00bcd4;
+  --color-sarathi-cyan-light: #4dd0e1;
+  --color-sarathi-header: #0097a7;
+  --color-sky-bg: #d9edf7;
+  --color-sky-bg-dark: #c4e3f3;
+  --color-btn-primary: #009EDE;
+  --color-btn-primary-hover: #0288d1;
+  --color-btn-success: #5CB85C;
+  --color-btn-success-hover: #4cae4c;
+  --color-btn-danger: #D9534F;
+  --color-btn-danger-hover: #c9302c;
+  --color-btn-warning: #F0AD4E;
+  --color-section-header: #0097a7;
+  --color-section-header-text: #ffffff;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: #d9edf7;
+    color: #333333;
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  select option {
+    background: white;
+    color: #333;
+  }
+}
+
+@layer components {
+  /* Government Header */
+  .gov-header-top {
+    background: linear-gradient(180deg, #1244A2 0%, #0d3680 100%);
+    color: white;
+    padding: 8px 0;
+    font-size: 12px;
+  }
+
+  .gov-header-main {
+    background: linear-gradient(135deg, #00acc1, #0097a7, #00838f);
+    color: white;
+    padding: 12px 0;
+    border-bottom: 3px solid #e65100;
+  }
+
+  .gov-navbar {
+    background: white;
+    border-bottom: 2px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* Section Headers */
+  .section-header {
+    background: linear-gradient(135deg, #0097a7, #00acc1);
+    color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 4px 4px 0 0;
+    letter-spacing: 0.3px;
+  }
+
+  /* Form Card */
+  .form-card {
+    background: white;
+    border: 1px solid #bce8f1;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  /* Input fields */
+  .gov-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+    transition: border-color 0.2s ease;
+    outline: none;
+    font-family: var(--font-sans);
+  }
+
+  .gov-input:focus {
+    border-color: #66afe9;
+    box-shadow: 0 0 0 3px rgba(102, 175, 233, 0.3);
+  }
+
+  .gov-input::placeholder {
+    color: #999;
+  }
+
+  .gov-input.error {
+    border-color: #D9534F;
+    box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.15);
+  }
+
+  .gov-select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+    outline: none;
+    font-family: var(--font-sans);
+    cursor: pointer;
+  }
+
+  .gov-select:focus {
+    border-color: #66afe9;
+    box-shadow: 0 0 0 3px rgba(102, 175, 233, 0.3);
+  }
+
+  /* Buttons */
+  .btn-gov-primary {
+    background: #009EDE;
+    color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-family: var(--font-sans);
+    letter-spacing: 0.3px;
+  }
+
+  .btn-gov-primary:hover {
+    background: #0288d1;
+  }
+
+  .btn-gov-primary:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+
+  .btn-gov-success {
+    background: #5CB85C;
+    color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-family: var(--font-sans);
+  }
+
+  .btn-gov-success:hover {
+    background: #4cae4c;
+  }
+
+  .btn-gov-danger {
+    background: #D9534F;
+    color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-family: var(--font-sans);
+  }
+
+  .btn-gov-danger:hover {
+    background: #c9302c;
+  }
+
+  .btn-gov-secondary {
+    background: #6c757d;
+    color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-family: var(--font-sans);
+  }
+
+  .btn-gov-secondary:hover {
+    background: #5a6268;
+  }
+
+  /* Progress step indicators */
+  .progress-step {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .progress-step.active {
+    background: #009EDE;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 158, 222, 0.4);
+  }
+
+  .progress-step.completed {
+    background: #5CB85C;
+    color: white;
+  }
+
+  .progress-step.inactive {
+    background: #e0e0e0;
+    color: #999;
+    border: 1px solid #ccc;
+  }
+
+  /* File upload zone */
+  .file-upload-zone {
+    border: 2px dashed #bce8f1;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f0f9ff;
+  }
+
+  .file-upload-zone:hover {
+    border-color: #009EDE;
+    background: #e3f2fd;
+  }
+
+  .file-upload-zone.has-file {
+    border-color: #5CB85C;
+    background: #f0fff0;
+  }
+
+  /* Footer */
+  .gov-footer {
+    background: linear-gradient(180deg, #1244A2 0%, #0d3680 100%);
+    color: white;
+    padding: 20px 0;
+  }
+
+  /* Indian tricolor stripe */
+  .tricolor-stripe {
+    height: 4px;
+    background: linear-gradient(90deg, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%);
+  }
+
+  /* Info panels */
+  .info-panel {
+    background: #d9edf7;
+    border: 1px solid #bce8f1;
+    border-radius: 4px;
+    color: #31708f;
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  .warning-panel {
+    background: #fcf8e3;
+    border: 1px solid #faebcc;
+    border-radius: 4px;
+    color: #8a6d3b;
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  .error-panel {
+    background: #f2dede;
+    border: 1px solid #ebccd1;
+    border-radius: 4px;
+    color: #a94442;
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  .success-panel {
+    background: #dff0d8;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
+    color: #3c763d;
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+}
